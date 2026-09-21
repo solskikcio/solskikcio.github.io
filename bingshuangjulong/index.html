@@ -1,0 +1,576 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="冰霜巨龙 - 传说生物图鉴与神话起源解析。探索冰霜巨龙的栖息地、技能机制、传说故事以及如何在奇幻设定中构建冰霜巨龙角色。">
+    <meta name="keywords" content="冰霜巨龙, 神话生物, 龙族图鉴, 冰系怪物, 奇幻设定">
+    <title>冰霜巨龙 - 传说生物图鉴与奇幻设定解析</title>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #a8d8ea;
+            --secondary-color: #005f73;
+            --accent-color: #94d2bd;
+            --text-dark: #1d3557;
+            --text-light: #f1faee;
+            --bg-gradient: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+            --card-bg: rgba(30, 41, 59, 0.7);
+            --border-color: rgba(168, 216, 234, 0.2);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'PingFang SC', 'Microsoft YaHei', 'Helvetica Neue', Arial, sans-serif;
+            background: var(--bg-gradient);
+            color: var(--text-light);
+            line-height: 1.6;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* 通用布局 */
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* 导航栏 */
+        header {
+            background: rgba(15, 23, 42, 0.9);
+            backdrop-filter: blur(10px);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 1px solid var(--border-color);
+            padding: 1rem 0;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo span {
+            font-size: 0.8em;
+            opacity: 0.7;
+            font-weight: 400;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--text-light);
+            text-decoration: none;
+            font-size: 1rem;
+            transition: color 0.3s;
+            position: relative;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary-color);
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--primary-color);
+            transition: width 0.3s;
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        /* Hero 区域 */
+        .hero {
+            position: relative;
+            padding: 6rem 0;
+            text-align: center;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at center, rgba(168, 216, 234, 0.1) 0%, transparent 70%);
+            z-index: -1;
+        }
+
+        h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            background: linear-gradient(to right, #fff, var(--primary-color));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+        }
+
+        .subtitle {
+            font-size: 1.25rem;
+            color: var(--accent-color);
+            max-width: 700px;
+            margin: 0 auto 2rem;
+        }
+
+        .hero-tags {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .tag {
+            background: rgba(168, 216, 234, 0.1);
+            border: 1px solid var(--border-color);
+            padding: 0.5rem 1.5rem;
+            border-radius: 50px;
+            font-size: 0.9rem;
+            color: var(--primary-color);
+        }
+
+        /* 介绍区域 */
+        .intro-section {
+            padding: 4rem 0;
+            text-align: center;
+        }
+
+        .intro-text {
+            max-width: 800px;
+            margin: 0 auto;
+            font-size: 1.1rem;
+            color: #cbd5e1;
+        }
+
+        /* 核心特征网格 */
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            padding: 4rem 0;
+        }
+
+        .feature-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            padding: 2rem;
+            border-radius: 12px;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            border-color: var(--primary-color);
+        }
+
+        .feature-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+            display: block;
+        }
+
+        .feature-card h3 {
+            margin-bottom: 1rem;
+            color: var(--primary-color);
+        }
+
+        .feature-card p {
+            font-size: 0.95rem;
+            color: #94a3b8;
+        }
+
+        /* 栖息地与习性 */
+        .habitat-section {
+            padding: 4rem 0;
+            background: rgba(0, 0, 0, 0.2);
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .section-header h2 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+            color: var(--text-light);
+        }
+
+        .section-header p {
+            color: var(--accent-color);
+        }
+
+        .habitat-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+        }
+
+        .habitat-item {
+            position: relative;
+            height: 300px;
+            border-radius: 12px;
+            overflow: hidden;
+            display: flex;
+            align-items: flex-end;
+            padding: 2rem;
+            background-size: cover;
+            background-position: center;
+            border: 1px solid var(--border-color);
+        }
+
+        .habitat-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(to top, rgba(15, 23, 42, 0.95), transparent);
+            z-index: 1;
+        }
+
+        .habitat-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .habitat-content h3 {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+            color: var(--primary-color);
+        }
+
+        .habitat-content p {
+            font-size: 0.9rem;
+            opacity: 0.9;
+        }
+
+        /* 传说与神话 */
+        .myth-section {
+            padding: 4rem 0;
+        }
+
+        .myth-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .myth-text h3 {
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            color: var(--text-light);
+        }
+
+        .myth-text p {
+            margin-bottom: 1.5rem;
+            color: #cbd5e1;
+        }
+
+        .myth-list {
+            list-style: none;
+            margin-top: 2rem;
+        }
+
+        .myth-list li {
+            padding: 1rem 0;
+            border-bottom: 1px solid var(--border-color);
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+        }
+
+        .myth-list li::before {
+            content: '❄';
+            color: var(--primary-color);
+            font-size: 1.2rem;
+            margin-top: 3px;
+        }
+
+        /* FAQ */
+        .faq-section {
+            padding: 4rem 0;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        details {
+            background: var(--card-bg);
+            margin-bottom: 1rem;
+            border-radius: 8px;
+            border: 1px solid var(--border-color);
+            overflow: hidden;
+        }
+
+        summary {
+            padding: 1.5rem;
+            cursor: pointer;
+            font-weight: 600;
+            list-style: none;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: background 0.3s;
+        }
+
+        summary:hover {
+            background: rgba(255, 255, 255, 0.05);
+        }
+
+        summary::-webkit-details-marker {
+            display: none;
+        }
+
+        summary::after {
+            content: '+';
+            font-size: 1.5rem;
+            color: var(--primary-color);
+        }
+
+        details[open] summary::after {
+            content: '-';
+        }
+
+        .faq-content {
+            padding: 0 1.5rem 1.5rem;
+            color: #cbd5e1;
+            border-top: 1px solid var(--border-color);
+            margin-top: 0.5rem;
+            padding-top: 1rem;
+        }
+
+        /* 页脚 */
+        footer {
+            margin-top: auto;
+            background: rgba(15, 23, 42, 0.95);
+            padding: 3rem 0;
+            text-align: center;
+            border-top: 1px solid var(--border-color);
+        }
+
+        footer p {
+            color: #64748b;
+            font-size: 0.9rem;
+        }
+
+        /* 响应式适配 */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.5rem;
+            }
+
+            .nav-links {
+                display: none; /* 移动端简化，实际项目可做汉堡菜单 */
+            }
+
+            .habitat-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .myth-content {
+                grid-template-columns: 1fr;
+            }
+
+            .hero {
+                padding: 4rem 0;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo">
+                    <span>DRAGON</span> 冰霜巨龙
+                </div>
+                <ul class="nav-links">
+                    <li><a href="#intro">图鉴概览</a></li>
+                    <li><a href="#habitat">栖息地</a></li>
+                    <li><a href="#mythology">神话传说</a></li>
+                    <li><a href="#faq">常见问题</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="container">
+                <h1>冰霜巨龙</h1>
+                <p class="subtitle">寒冷与力量交织的远古霸主，传说中掌控极寒之力的龙族皇者。</p>
+                <div class="hero-tags">
+                    <span class="tag">极寒属性</span>
+                    <span class="tag">飞行生物</span>
+                    <span class="tag">神话生物</span>
+                    <span class="tag">高阶魔兽</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Intro Section -->
+        <section id="intro" class="intro-section">
+            <div class="container">
+                <p class="intro-text">
+                    冰霜巨龙是龙族谱系中极为罕见且强大的分支。它们通常生活在极寒的冻土、冰川或高山之巅，以冰雪为食，拥有操纵温度与寒流的超凡能力。在奇幻文学与游戏中，它们常被描绘为高傲、冷酷且极具破坏力的存在。
+                </p>
+            </div>
+        </section>
+
+        <!-- Features Grid -->
+        <section class="features-grid">
+            <article class="feature-card">
+                <span class="feature-icon">❄️</span>
+                <h3>极寒吐息</h3>
+                <p>能够喷射出能瞬间冻结血液的极寒吐息，将岩石化为冰雕，使敌人陷入麻痹状态。</p>
+            </article>
+            <article class="feature-card">
+                <span class="feature-icon">🛡️</span>
+                <h3>抗性装甲</h3>
+                <p>覆盖全身的坚冰鳞片能抵御常规火焰攻击，并反射部分魔法伤害。</p>
+            </article>
+            <article class="feature-card">
+                <span class="feature-icon">👁️</span>
+                <h3>暴风之眼</h3>
+                <p>在暴风雪中拥有绝对视野，能感知周围任何微小的动静，嗅觉灵敏。</p>
+            </article>
+        </section>
+
+        <!-- Habitat Section -->
+        <section id="habitat" class="habitat-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2>栖息环境</h2>
+                    <p>它们通常隐居于人类无法涉足的绝地</p>
+                </div>
+                <div class="habitat-grid">
+                    <div class="habitat-item" style="background-image: url('https://picsum.photos/seed/ice1/600/400');">
+                        <div class="habitat-overlay"></div>
+                        <div class="habitat-content">
+                            <h3>永冻冰川</h3>
+                            <p>位于极北之地的无尽冰原，只有最强壮的冰霜巨龙才能在此建立巢穴。</p>
+                        </div>
+                    </div>
+                    <div class="habitat-item" style="background-image: url('https://picsum.photos/seed/mountain/600/400');">
+                        <div class="habitat-overlay"></div>
+                        <div class="habitat-content">
+                            <h3>高山雪峰</h3>
+                            <p>耸入云端的冰峰，常年被云雾笼罩，是它们捕食和休憩的理想场所。</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Mythology Section -->
+        <section id="mythology" class="myth-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2>神话与传说</h2>
+                </div>
+                <div class="myth-content">
+                    <div class="myth-text">
+                        <h3>北欧神话中的尼德霍格</h3>
+                        <p>在北欧神话传说中，冰霜巨龙并非单纯的怪物，它们往往象征着自然界不可抗拒的毁灭力量。尼德霍格（Nidhogg）作为啃食世界之树树根的恶龙，其原型与冰霜巨龙有着深刻的联系，代表着生命的枯萎与寒冷的侵蚀。</p>
+                        <p>在许多奇幻设定中，冰霜巨龙被视为“守门人”。它们守护着通往禁忌领域的入口，只有通过严酷的试炼，才能获得它们的认可或击败它们夺取宝藏。</p>
+                        
+                        <h4>关键传说特征：</h4>
+                        <ul class="myth-list">
+                            <li>与雷电巨人的宿敌关系</li>
+                            <li>能够冻结时间或延缓衰老</li>
+                            <li>掌握着古代失落的冰霜魔法</li>
+                        </ul>
+                    </div>
+                    <div class="myth-image" style="background: var(--card-bg); padding: 2rem; border-radius: 12px; border: 1px solid var(--border-color); display: flex; align-items: center; justify-content: center;">
+                        <div style="text-align: center;">
+                            <div style="font-size: 4rem; margin-bottom: 1rem;">🐉</div>
+                            <p style="color: var(--accent-color); font-style: italic;">"寒冷并非死亡，而是永恒的沉睡。"</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section id="faq" class="faq-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2>常见问题</h2>
+                </div>
+                
+                <details>
+                    <summary>冰霜巨龙与火焰巨龙哪个更强？</summary>
+                    <div class="faq-content">
+                        这取决于具体的奇幻设定。通常来说，火焰巨龙在爆发力上更强，而冰霜巨龙在控制范围和持久战上更具优势。冰霜巨龙往往拥有更强的防御力，因为其鳞片能适应极端低温环境。
+                    </div>
+                </details>
+
+                <details>
+                    <summary>冰霜巨龙会攻击人类吗？</summary>
+                    <div class="faq-content">
+                        在大多数设定中，冰霜巨龙是中立偏恶的生物。它们通常不会主动攻击人类，除非人类侵犯了它们的领地、盗取了龙蛋或触犯了禁忌。对于它们来说，人类往往只是微不足道的食物或玩具。
+                    </div>
+                </details>
+
+                <details>
+                    <summary>如何识别一只年轻的冰霜巨龙？</summary>
+                    <div class="faq-content">
+                        年轻的冰霜巨龙鳞片较为稀疏，颜色偏蓝白，且呼吸出的寒气还未完全凝结成冰晶。它们的体型通常比成年龙小，且飞行时伴随着不稳定的风暴气流。
+                    </div>
+                </details>
+
+                <details>
+                    <summary>冰霜巨龙的弱点是什么？</summary>
+                    <div class="faq-content">
+                        尽管它们身披坚冰，但极度干燥的火焰或能够破坏魔法结构的“破冰”魔法依然是其主要弱点。此外，它们的眼睛是极少数没有冰晶覆盖的部位，也是相对脆弱的部位。
+                    </div>
+                </details>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2023 冰霜巨龙图鉴 | 传说生物研究中心</p>
+            <p style="margin-top: 0.5rem; font-size: 0.8rem; color: #475569;">本页面仅供科普与设定参考，内容基于传统神话与流行奇幻文化整理。</p>
+        </div>
+    </footer>
+
+</body>
+</html>
