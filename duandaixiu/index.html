@@ -1,0 +1,727 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>缎带绣-手作布艺装饰与针法教程指南</title>
+    <meta name="description" content="缎带绣专业教程与资源站，提供缎带绣基础针法图解、花样设计灵感、工具选购指南及成品展示，助您轻松掌握缎带绣技艺，创作精美家居装饰。">
+    <meta name="keywords" content="缎带绣, 缎带绣针法, 缎带绣教程, 手工刺绣, 布艺装饰, 手工DIY">
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #8B5A2B;
+            --primary-light: #D2B48C;
+            --accent-color: #E6B89C;
+            --bg-color: #FDFBF7;
+            --card-bg: #FFFFFF;
+            --text-main: #333333;
+            --text-secondary: #666666;
+            --border-radius: 8px;
+            --spacing-unit: 20px;
+            --container-width: 1200px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans SC", sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.3s ease;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* Layout Utilities */
+        .container {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 0 var(--spacing-unit);
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            color: var(--primary-color);
+            font-weight: 600;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            color: var(--text-secondary);
+            margin-bottom: 3rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* Header */
+        header {
+            background-color: var(--card-bg);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .header-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 70px;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo span {
+            display: inline-block;
+            width: 24px;
+            height: 24px;
+            background-color: var(--primary-color);
+            border-radius: 50%;
+        }
+
+        nav ul {
+            display: flex;
+            gap: 30px;
+        }
+
+        nav a {
+            font-weight: 500;
+            color: var(--text-main);
+            position: relative;
+        }
+
+        nav a:hover {
+            color: var(--primary-color);
+        }
+
+        nav a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -5px;
+            left: 0;
+            background-color: var(--primary-color);
+            transition: width 0.3s;
+        }
+
+        nav a:hover::after {
+            width: 100%;
+        }
+
+        .cta-btn {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 8px 20px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+
+        .cta-btn:hover {
+            background-color: #6d461f;
+            color: white;
+        }
+
+        /* Hero Section */
+        .hero {
+            position: relative;
+            background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('https://picsum.photos/seed/ribbonembroidery/1600/600.jpg') no-repeat center center/cover;
+            height: 500px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            padding: 0 20px;
+        }
+
+        .hero-content h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+        }
+
+        .hero-content p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+        }
+
+        .btn {
+            padding: 12px 30px;
+            border-radius: 30px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .btn-primary {
+            background-color: var(--primary-color);
+            color: white;
+            border: 2px solid var(--primary-color);
+        }
+
+        .btn-outline {
+            background-color: transparent;
+            color: white;
+            border: 2px solid white;
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+        }
+
+        .btn-outline:hover {
+            background-color: white;
+            color: var(--primary-color);
+        }
+
+        /* Features Section */
+        .features {
+            padding: 80px 0;
+            background-color: var(--bg-color);
+        }
+
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+
+        .feature-card {
+            background: var(--card-bg);
+            padding: 30px;
+            border-radius: var(--border-radius);
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            transition: transform 0.3s;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .feature-icon {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: var(--primary-light);
+        }
+
+        .feature-card h3 {
+            margin-bottom: 10px;
+            color: var(--text-main);
+        }
+
+        .feature-card p {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+        }
+
+        /* Tutorial Section */
+        .tutorials {
+            padding: 80px 0;
+        }
+
+        .tutorial-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .tutorial-card {
+            background: var(--card-bg);
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+            transition: box-shadow 0.3s;
+        }
+
+        .tutorial-card:hover {
+            box-shadow: 0 10px 20px rgba(0,0,0,0.12);
+        }
+
+        .card-image {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            background-color: #eee;
+        }
+
+        .card-content {
+            padding: 20px;
+        }
+
+        .card-tag {
+            display: inline-block;
+            background-color: var(--accent-color);
+            color: var(--primary-color);
+            padding: 4px 10px;
+            border-radius: 4px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+
+        .card-content h3 {
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+            line-height: 1.4;
+        }
+
+        .card-content p {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            margin-bottom: 15px;
+        }
+
+        .card-link {
+            color: var(--primary-color);
+            font-weight: 600;
+            font-size: 0.9rem;
+            display: inline-flex;
+            align-items: center;
+        }
+
+        .card-link::after {
+            content: '→';
+            margin-left: 5px;
+            transition: margin-left 0.2s;
+        }
+
+        .card-link:hover::after {
+            margin-left: 10px;
+        }
+
+        /* Tools Guide */
+        .tools {
+            padding: 80px 0;
+            background-color: #F9F5F0;
+        }
+
+        .tools-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 40px;
+            align-items: center;
+        }
+
+        .tools-image {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .tools-image img {
+            width: 100%;
+            border-radius: var(--border-radius);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        .tools-info {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .tools-list {
+            margin-top: 30px;
+        }
+
+        .tool-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .tool-icon {
+            width: 40px;
+            height: 40px;
+            background-color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 15px;
+            color: var(--primary-color);
+            font-weight: bold;
+        }
+
+        /* FAQ Section */
+        .faq {
+            padding: 80px 0;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            background: var(--card-bg);
+            margin-bottom: 15px;
+            border-radius: var(--border-radius);
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+            overflow: hidden;
+        }
+
+        .faq-question {
+            padding: 20px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 600;
+            background-color: white;
+            transition: background-color 0.3s;
+        }
+
+        .faq-question:hover {
+            background-color: #fafafa;
+        }
+
+        .faq-answer {
+            padding: 0 20px 20px;
+            color: var(--text-secondary);
+            display: none;
+            border-top: 1px solid #f0f0f0;
+        }
+
+        .faq-item.active .faq-answer {
+            display: block;
+        }
+
+        .faq-item.active .faq-question::after {
+            content: '−';
+            font-size: 1.5rem;
+            line-height: 1;
+        }
+
+        .faq-question::after {
+            content: '+';
+            font-size: 1.5rem;
+            color: var(--primary-color);
+        }
+
+        /* Footer */
+        footer {
+            background-color: #2C2C2C;
+            color: #ccc;
+            padding: 60px 0 20px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-col h4 {
+            color: white;
+            margin-bottom: 20px;
+            font-size: 1.1rem;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-col ul li a:hover {
+            color: white;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            border-top: 1px solid #444;
+            padding-top: 20px;
+            font-size: 0.9rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .header-inner {
+                flex-direction: column;
+                height: auto;
+                padding: 15px 0;
+            }
+
+            nav ul {
+                margin: 15px 0;
+                gap: 15px;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .hero-content h1 {
+                font-size: 2rem;
+            }
+
+            .hero {
+                height: 400px;
+            }
+
+            .tools-container {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container header-inner">
+            <a href="#" class="logo">
+                <span></span> 缎带绣工坊
+            </a>
+            <nav>
+                <ul>
+                    <li><a href="#">首页</a></li>
+                    <li><a href="#tutorials">基础教程</a></li>
+                    <li><a href="#patterns">花样图解</a></li>
+                    <li><a href="#tools">工具指南</a></li>
+                    <li><a href="#faq">常见问题</a></li>
+                </ul>
+            </nav>
+            <a href="#" class="cta-btn">开始学习</a>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="hero-content">
+                <h1>用缎带绣点亮生活</h1>
+                <p>无需复杂的刺绣基础，只需一根针、一束丝带，即可创作出立体感十足的布艺装饰。探索缎带绣的无限可能。</p>
+                <div class="hero-buttons">
+                    <a href="#tutorials" class="btn btn-primary">查看入门针法</a>
+                    <a href="#patterns" class="btn btn-outline">浏览花样图库</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Features Section -->
+        <section class="features">
+            <div class="container">
+                <div class="feature-grid">
+                    <article class="feature-card">
+                        <div class="feature-icon">✦</div>
+                        <h3>入门简单</h3>
+                        <p>针法简单易学，不需要复杂的背景刺绣技巧，非常适合初学者和手工爱好者。</p>
+                    </article>
+                    <article class="feature-card">
+                        <div class="feature-icon">◈</div>
+                        <h3>立体感强</h3>
+                        <p>丝带独特的材质赋予了作品强烈的浮雕感和光泽感，视觉效果远超普通刺绣。</p>
+                    </article>
+                    <article class="feature-card">
+                        <div class="feature-icon">✧</div>
+                        <h3>用途广泛</h3>
+                        <p>可用于抱枕、壁挂、服饰装饰、婚礼请柬等，为生活增添精致与温馨。</p>
+                    </article>
+                    <article class="feature-card">
+                        <div class="feature-icon">❋</div>
+                        <h3>色彩丰富</h3>
+                        <p>市面上有红、蓝、绿、黄等多种颜色的缎带，易于搭配出时尚、复古或清新的风格。</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Tutorials Section -->
+        <section id="tutorials" class="tutorials">
+            <div class="container">
+                <h2 class="section-title">基础针法教程</h2>
+                <p class="section-subtitle">掌握这几种核心针法，您就能完成80%的缎带绣作品。以下是新手必学的几种基础针法解析。</p>
+                
+                <div class="tutorial-grid">
+                    <article class="tutorial-card">
+                        <img src="https://picsum.photos/seed/ribbon1/400/250" alt="缎带绣基础针法" class="card-image">
+                        <div class="card-content">
+                            <span class="card-tag">基础入门</span>
+                            <h3>缎面绣</h3>
+                            <p>这是最基础也是最重要的针法，通过改变丝带的走向，可以绣出花瓣、叶子等立体形状。</p>
+                            <a href="#" class="card-link">学习详细步骤</a>
+                        </div>
+                    </article>
+
+                    <article class="tutorial-card">
+                        <img src="https://picsum.photos/seed/ribbon2/400/250" alt="缎带绣组合针法" class="card-image">
+                        <div class="card-content">
+                            <span class="card-tag">进阶技巧</span>
+                            <h3>组合针法应用</h3>
+                            <p>将缎面绣与回针、锁边针结合，可以绣出层次更丰富的花束和植物图案。</p>
+                            <a href="#" class="card-link">查看组合示例</a>
+                        </div>
+                    </article>
+
+                    <article class="tutorial-card">
+                        <img src="https://picsum.photos/seed/ribbon3/400/250" alt="立体绣法" class="card-image">
+                        <div class="card-content">
+                            <span class="card-tag">立体造型</span>
+                            <h3>立体绣法技巧</h3>
+                            <p>利用针的穿法改变丝带的蓬松度，制作出饱满的花朵和果实，增加作品的真实感。</p>
+                            <a href="#" class="card-link">掌握立体技巧</a>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Tools Section -->
+        <section id="tools" class="tools">
+            <div class="container">
+                <div class="tools-container">
+                    <div class="tools-image">
+                        <img src="https://picsum.photos/seed/embroiderytools/600/400" alt="缎带绣工具展示">
+                    </div>
+                    <div class="tools-info">
+                        <h2 class="section-title" style="text-align: left;">工具与材料指南</h2>
+                        <p style="color: var(--text-secondary);">工欲善其事，必先利其器。选择合适的工具能让您的刺绣过程更加顺畅。</p>
+                        
+                        <div class="tools-list">
+                            <div class="tool-item">
+                                <div class="tool-icon">1</div>
+                                <div>
+                                    <h4>绣绷</h4>
+                                    <p style="font-size: 0.9rem; color: #666;">建议使用木质或硬塑料绣绷，尺寸根据作品大小选择。绣绷能固定布料，防止走位。</p>
+                                </div>
+                            </div>
+                            <div class="tool-item">
+                                <div class="tool-icon">2</div>
+                                <div>
+                                    <h4>针</h4>
+                                    <p style="font-size: 0.9rem; color: #666;">推荐使用专用的缎带绣针，针眼大，针尖尖，容易穿过厚实的丝带而不易断裂。</p>
+                                </div>
+                            </div>
+                            <div class="tool-item">
+                                <div class="tool-icon">3</div>
+                                <div>
+                                    <h4>丝带</h4>
+                                    <p style="font-size: 0.9rem; color: #666;">常用宽度为4mm、7mm和10mm。4mm适合精细线条，7mm和10mm适合花瓣和叶子。</p>
+                                </div>
+                            </div>
+                            <div class="tool-item">
+                                <div class="tool-icon">4</div>
+                                <div>
+                                    <h4>剪刀</h4>
+                                    <p style="font-size: 0.9rem; color: #666;">建议准备一把专用的刺绣小剪刀，剪断丝带后切口平整，防止丝带散开。</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section id="faq" class="faq">
+            <div class="container">
+                <h2 class="section-title">常见问题解答</h2>
+                <div class="faq-item">
+                    <div class="faq-question">缎带绣适合完全没有基础的人吗？</div>
+                    <div class="faq-answer">
+                        <p>非常适合。缎带绣主要利用丝带的物理特性，针法相对简单（主要是单针和简单的回针），不像传统刺绣那样需要复杂的背景绣法。只要掌握了基本的穿针引线和几种核心针法，初学者也能很快上手。</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">丝带容易断裂怎么办？</div>
+                    <div class="faq-answer">
+                        <p>丝带断裂通常是因为针太钝或布料太粗糙。建议使用专用的刺绣针，并在穿过布料前将针尖稍微用砂纸打磨一下，使其更光滑。另外，在绣制过程中动作要轻柔，避免用力拉扯丝带。</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">哪里可以买到好的缎带绣工具？</div>
+                    <div class="faq-answer">
+                        <p>优质的缎带绣针和专用的丝带可以在专业的刺绣用品店或信誉良好的手工艺电商平台购买。选购时请注意针的材质（通常为不锈钢）和丝带的宽度是否符合您的需求。</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">缎带绣作品如何保养？</div>
+                    <div class="faq-answer">
+                        <p>缎带绣作品建议使用冷水手洗，避免机洗以免丝带缠绕或变形。清洗后轻轻挤压水分，平铺晾干。避免阳光直射，以防丝带褪色。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4>关于我们</h4>
+                    <p style="font-size: 0.9rem; line-height: 1.8;">
+                        缎带绣工坊致力于推广缎带绣这一优雅的手工艺术，为手工爱好者提供优质的教程、图解和交流平台。我们相信，每一针一线都能编织出生活的美好。
+                    </p>
+                </div>
+                <div class="footer-col">
+                    <h4>快速链接</h4>
+                    <ul>
+                        <li><a href="#">新手入门</a></li>
+                        <li><a href="#">针法大全</a></li>
+                        <li><a href="#">花样推荐</a></li>
+                        <li><a href="#">工具选购</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>联系我们</h4>
+                    <ul>
+                        <li>邮箱：contact@ribbonembroidery.com</li>
+                        <li>电话：400-123-4567</li>
+                        <li>地址：创意手工产业园A栋</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 缎带绣工坊. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Simple FAQ Accordion Logic
+        document.addEventListener('DOMContentLoaded', function() {
+            const faqItems = document.querySelectorAll('.faq-item');
+            
+            faqItems.forEach(item => {
+                const question = item.querySelector('.faq-question');
+                question.addEventListener('click', () => {
+                    // Close all other items
+                    faqItems.forEach(otherItem => {
+                        if (otherItem !== item) {
+                            otherItem.classList.remove('active');
+                        }
+                    });
+                    // Toggle current item
+                    item.classList.toggle('active');
+                });
+            });
+        });
+    </script>
+</body>
+</html>
