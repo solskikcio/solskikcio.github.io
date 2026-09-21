@@ -1,0 +1,657 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="韩良官方主页，提供关于韩良的详细介绍、生平事迹、代表作品及最新动态资讯。致力于展现韩良的专业领域与独特见解。">
+    <meta name="keywords" content="韩良, 韩良简介, 韩良作品, 韩良资讯">
+    <title>韩良-资深行业专家与领域权威</title>
+    <style>
+        :root {
+            --primary-color: #2c3e50;
+            --accent-color: #c0392b;
+            --text-color: #333;
+            --bg-light: #f8f9fa;
+            --bg-white: #ffffff;
+            --border-color: #e1e4e8;
+            --spacing-unit: 1rem;
+            --container-width: 1200px;
+            --shadow-sm: 0 2px 4px rgba(0,0,0,0.05);
+            --shadow-md: 0 4px 6px rgba(0,0,0,0.1);
+            --font-main: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans SC", sans-serif;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: var(--font-main);
+            color: var(--text-color);
+            line-height: 1.6;
+            background-color: var(--bg-white);
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.2s;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        img {
+            max-width: 100%;
+            display: block;
+        }
+
+        /* Layout Utilities */
+        .container {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 0 var(--spacing-unit);
+        }
+
+        .section {
+            padding: 4rem 0;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .section-title {
+            font-size: 2rem;
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 3px;
+            background-color: var(--accent-color);
+            margin: 0.5rem auto 0;
+        }
+
+        .section-desc {
+            color: #666;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* Header */
+        header {
+            background-color: var(--bg-white);
+            border-bottom: 1px solid var(--border-color);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 70px;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .logo span {
+            color: var(--accent-color);
+        }
+
+        nav ul {
+            display: flex;
+            gap: 2rem;
+        }
+
+        nav a {
+            font-weight: 500;
+            color: var(--primary-color);
+        }
+
+        nav a:hover {
+            color: var(--accent-color);
+        }
+
+        .cta-btn {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 0.6rem 1.2rem;
+            border-radius: 4px;
+            font-weight: 500;
+        }
+
+        .cta-btn:hover {
+            background-color: #34495e;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #fdfbfb 0%, #ebedee 100%);
+            padding: 5rem 0;
+            text-align: center;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            color: var(--primary-color);
+            margin-bottom: 1.5rem;
+            line-height: 1.2;
+        }
+
+        .hero p {
+            font-size: 1.25rem;
+            color: #555;
+            margin-bottom: 2rem;
+        }
+
+        .hero-tags {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .tag {
+            background: rgba(44, 62, 80, 0.1);
+            color: var(--primary-color);
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+        }
+
+        /* Profile Section */
+        .profile-grid {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 3rem;
+            align-items: start;
+        }
+
+        .profile-card {
+            background: var(--bg-white);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: var(--shadow-sm);
+            text-align: center;
+            padding-bottom: 1.5rem;
+        }
+
+        .profile-img {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+            background-color: #eee;
+        }
+
+        .profile-info {
+            padding: 1.5rem;
+        }
+
+        .profile-info h3 {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .profile-role {
+            color: var(--accent-color);
+            font-weight: 600;
+            margin-bottom: 1rem;
+            display: block;
+        }
+
+        .profile-bio {
+            color: #666;
+            margin-bottom: 1.5rem;
+            text-align: left;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            border-top: 1px solid var(--border-color);
+            padding-top: 1rem;
+        }
+
+        .social-icon {
+            width: 36px;
+            height: 36px;
+            background-color: #f0f0f0;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background 0.2s;
+        }
+
+        .social-icon:hover {
+            background-color: var(--primary-color);
+            color: white;
+        }
+
+        /* Expertise Section */
+        .expertise-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .expertise-item {
+            background: var(--bg-white);
+            padding: 2rem;
+            border-radius: 8px;
+            border: 1px solid var(--border-color);
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .expertise-item:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-md);
+            border-color: var(--primary-color);
+        }
+
+        .expertise-icon {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            color: var(--accent-color);
+        }
+
+        .expertise-item h3 {
+            font-size: 1.25rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .expertise-item p {
+            color: #666;
+            font-size: 0.95rem;
+        }
+
+        /* Publications Section */
+        .pub-list {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .pub-item {
+            display: flex;
+            gap: 1.5rem;
+            padding: 1.5rem;
+            background: var(--bg-light);
+            border-radius: 8px;
+            align-items: center;
+        }
+
+        .pub-date {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 0.5rem 0.8rem;
+            border-radius: 4px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            min-width: 100px;
+            text-align: center;
+        }
+
+        .pub-content h4 {
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .pub-content p {
+            color: #666;
+            font-size: 0.9rem;
+        }
+
+        /* Quote Section */
+        .quote-section {
+            background-color: var(--primary-color);
+            color: white;
+            text-align: center;
+            padding: 4rem 0;
+        }
+
+        .quote-text {
+            font-size: 1.5rem;
+            font-style: italic;
+            max-width: 800px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #1a252f;
+            color: #bdc3c7;
+            padding: 3rem 0;
+            font-size: 0.9rem;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-col h4 {
+            color: white;
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-col ul li a:hover {
+            color: white;
+        }
+
+        .copyright {
+            text-align: center;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            padding-top: 2rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .profile-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .nav-container {
+                flex-direction: column;
+                height: auto;
+                padding: 1rem 0;
+                gap: 1rem;
+            }
+
+            nav ul {
+                gap: 1rem;
+                font-size: 0.9rem;
+            }
+
+            .pub-item {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container nav-container">
+            <div class="logo">
+                <span>韩</span>良
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#about">关于我</a></li>
+                    <li><a href="#expertise">专业领域</a></li>
+                    <li><a href="#publications">著作与观点</a></li>
+                    <li><a href="#contact">联系合作</a></li>
+                </ul>
+            </nav>
+            <a href="#contact" class="cta-btn">预约咨询</a>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="container hero-content">
+                <h1>深耕专业领域，洞察行业趋势</h1>
+                <p>致力于通过深度分析与实践指导，为个人成长与企业决策提供专业支持。</p>
+                <div class="hero-tags">
+                    <span class="tag">战略规划</span>
+                    <span class="tag">深度研究</span>
+                    <span class="tag">行业咨询</span>
+                    <span class="tag">经验分享</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="section">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">关于韩良</h2>
+                    <p class="section-desc">了解韩良的背景、从业经历以及其致力于达成的专业目标。</p>
+                </div>
+                
+                <div class="profile-grid">
+                    <div class="profile-card">
+                        <!-- Using a generic seed image for placeholder -->
+                        <img src="https://picsum.photos/seed/hanliang/400/400" alt="韩良形象" class="profile-img">
+                        <div class="profile-info">
+                            <h3>韩良</h3>
+                            <span class="profile-role">资深行业专家 / 咨询顾问</span>
+                            <div class="social-links">
+                                <a href="#" class="social-icon" aria-label="微信">W</a>
+                                <a href="#" class="social-icon" aria-label="微博">B</a>
+                                <a href="#" class="social-icon" aria-label="领英">L</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="profile-details">
+                        <p class="profile-bio">
+                            韩良拥有超过十五年的行业深耕经验，长期专注于[核心领域]的变革与创新发展。作为一名务实的策略思考者，韩良善于从复杂的数据中提炼关键洞察，为企业提供切实可行的解决方案。
+                        </p>
+                        <p class="profile-bio">
+                            在职业生涯中，韩良曾主导多个大型项目，积累了丰富的实战经验。其独特的分析视角和前瞻性的思维模式，使其在行业内拥有良好的口碑。韩良坚信，专业知识的传递与分享是推动行业进步的重要力量。
+                        </p>
+                        <div style="margin-top: 2rem;">
+                            <h4 style="margin-bottom: 1rem; color: var(--primary-color);">核心成就</h4>
+                            <ul style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.5rem;">
+                                <li style="display: flex; align-items: center; gap: 0.5rem;">
+                                    <span style="color: var(--accent-color);">✓</span> 获得行业年度创新贡献奖
+                                </li>
+                                <li style="display: flex; align-items: center; gap: 0.5rem;">
+                                    <span style="color: var(--accent-color);">✓</span> 发表核心期刊论文 20+ 篇
+                                </li>
+                                <li style="display: flex; align-items: center; gap: 0.5rem;">
+                                    <span style="color: var(--accent-color);">✓</span> 培训专业人才 5000+ 人次
+                                </li>
+                                <li style="display: flex; align-items: center; gap: 0.5rem;">
+                                    <span style="color: var(--accent-color);">✓</span> 主导完成国家级课题项目
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Expertise Section -->
+        <section id="expertise" class="section" style="background-color: var(--bg-light);">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">专业领域</h2>
+                    <p class="section-desc">韩良在以下领域拥有深厚的积累和独到的见解。</p>
+                </div>
+
+                <div class="expertise-list">
+                    <article class="expertise-item">
+                        <div class="expertise-icon">📊</div>
+                        <h3>数据分析与洞察</h3>
+                        <p>利用大数据技术挖掘商业价值，通过可视化手段呈现关键结论，辅助科学决策。</p>
+                    </article>
+                    <article class="expertise-item">
+                        <div class="expertise-icon">🚀</div>
+                        <h3>战略规划与转型</h3>
+                        <p>为企业提供从顶层设计到落地执行的全方位战略咨询服务，助力企业实现转型升级。</p>
+                    </article>
+                    <article class="expertise-item">
+                        <div class="expertise-icon">💡</div>
+                        <h3>创新方法论</h3>
+                        <p>引入前沿的管理理念与工具，优化组织架构，激发团队创新活力。</p>
+                    </article>
+                    <article class="expertise-item">
+                        <div class="expertise-icon">🤝</div>
+                        <h3>资源整合与对接</h3>
+                        <p>搭建行业交流平台，促进优质资源的有效配置与高效对接。</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Publications Section -->
+        <section id="publications" class="section">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">著作与观点</h2>
+                    <p class="section-desc">精选韩良近年来发表的文章、访谈及核心观点。</p>
+                </div>
+
+                <div class="pub-list">
+                    <article class="pub-item">
+                        <div class="pub-date">2023-10</div>
+                        <div class="pub-content">
+                            <h4>《数字化时代的组织韧性构建》</h4>
+                            <p>发表在《行业观察》杂志，探讨在不确定性环境中，企业如何通过敏捷组织提升抗风险能力。</p>
+                        </div>
+                    </article>
+                    <article class="pub-item">
+                        <div class="pub-date">2023-06</div>
+                        <div class="pub-content">
+                            <h4>未来五年行业发展趋势深度分析</h4>
+                            <p>接受权威媒体专访，分享对[相关行业]未来五年的技术演进与市场格局的预判。</p>
+                        </div>
+                    </article>
+                    <article class="pub-item">
+                        <div class="pub-date">2022-12</div>
+                        <div class="pub-content">
+                            <h4>如何通过流程优化提升效率</h4>
+                            <p>发表于专业专栏，详细解析流程再造在提升企业运营效率中的实际应用案例与注意事项。</p>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Quote Section -->
+        <section class="quote-section">
+            <div class="container">
+                <p class="quote-text">“真正的专业，不仅在于对知识的掌握，更在于将知识转化为推动进步的力量。持续学习，深度思考，是通往卓越的唯一路径。”</p>
+                <p style="margin-top: 1rem; font-weight: bold; opacity: 0.8;">—— 韩良</p>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section id="faq" class="section" style="background-color: var(--bg-light);">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">常见问题</h2>
+                </div>
+                <div style="max-width: 800px; margin: 0 auto;">
+                    <details style="margin-bottom: 1rem; border-bottom: 1px solid #ddd; padding-bottom: 1rem;">
+                        <summary style="cursor: pointer; font-weight: 600; color: var(--primary-color);">韩良提供哪些形式的服务？</summary>
+                        <p style="margin-top: 0.5rem; color: #555;">韩良提供一对一深度咨询、企业内训讲座、公开课分享以及专题研究报告撰写等多种形式的服务，以满足不同客户的需求。</p>
+                    </details>
+                    <details style="margin-bottom: 1rem; border-bottom: 1px solid #ddd; padding-bottom: 1rem;">
+                        <summary style="cursor: pointer; font-weight: 600; color: var(--primary-color);">如何预约韩良的咨询时间？</summary>
+                        <p style="margin-top: 0.5rem; color: #555;">您可以通过页面底部的联系表单提交预约申请，或者直接发送邮件至官方邮箱。我们的团队会尽快与您联系确认具体时间。</p>
+                    </details>
+                    <details style="margin-bottom: 1rem; border-bottom: 1px solid #ddd; padding-bottom: 1rem;">
+                        <summary style="cursor: pointer; font-weight: 600; color: var(--primary-color);">韩良的著作在哪里可以购买？</summary>
+                        <p style="margin-top: 0.5rem; color: #555;">部分精选文章和观点已收录于电子版专栏，纸质版书籍可通过各大电商平台搜索相关关键词获取。</p>
+                    </details>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="section">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">联系合作</h2>
+                    <p class="section-desc">期待与您的交流，共同探讨更多可能性。</p>
+                </div>
+                <div style="max-width: 600px; margin: 0 auto; text-align: center;">
+                    <form style="display: flex; flex-direction: column; gap: 1rem; text-align: left;">
+                        <div>
+                            <label style="display: block; margin-bottom: 0.5rem; font-weight: 500;">您的姓名</label>
+                            <input type="text" style="width: 100%; padding: 0.8rem; border: 1px solid #ccc; border-radius: 4px;" placeholder="请输入姓名">
+                        </div>
+                        <div>
+                            <label style="display: block; margin-bottom: 0.5rem; font-weight: 500;">联系邮箱</label>
+                            <input type="email" style="width: 100%; padding: 0.8rem; border: 1px solid #ccc; border-radius: 4px;" placeholder="请输入邮箱">
+                        </div>
+                        <div>
+                            <label style="display: block; margin-bottom: 0.5rem; font-weight: 500;">咨询内容</label>
+                            <textarea rows="4" style="width: 100%; padding: 0.8rem; border: 1px solid #ccc; border-radius: 4px;" placeholder="请简要描述您的需求..."></textarea>
+                        </div>
+                        <button type="button" class="cta-btn" style="width: 100%; border: none; cursor: pointer;">发送消息</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4>韩良</h4>
+                    <p>专注于为个人和企业提供专业的战略咨询与成长指导。</p>
+                </div>
+                <div class="footer-col">
+                    <h4>快速链接</h4>
+                    <ul>
+                        <li><a href="#about">关于我</a></li>
+                        <li><a href="#expertise">专业领域</a></li>
+                        <li><a href="#publications">著作观点</a></li>
+                        <li><a href="#contact">联系合作</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>联系方式</h4>
+                    <ul>
+                        <li>邮箱: contact@hanliang.example.com</li>
+                        <li>地址: 中国·北京</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2023 韩良. 保留所有权利. 本网站内容仅供展示与交流，不构成商业承诺。</p>
+            </div>
+        </div>
+    </footer>
+
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+</body>
+</html>
