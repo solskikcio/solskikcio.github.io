@@ -1,0 +1,613 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="电影软件推荐与评测，包含高清播放器、影视聚合应用及本地播放工具的下载指南、功能对比与使用教程。">
+    <meta name="keywords" content="电影软件, 播放器, 影视软件, 本地播放, 在线电影, 软件评测">
+    <title>电影软件-高清播放器与影视资源聚合平台</title>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #e50914;
+            --primary-hover: #b20710;
+            --bg-color: #141414;
+            --card-bg: #1f1f1f;
+            --text-main: #ffffff;
+            --text-secondary: #b3b3b3;
+            --border-color: #333;
+            --spacing-unit: 1rem;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.3s;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* Utility */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 var(--spacing-unit);
+        }
+
+        .section-title {
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+            padding-left: 0.5rem;
+            border-left: 4px solid var(--primary-color);
+            font-weight: 600;
+        }
+
+        /* Header */
+        header {
+            background-color: rgba(20, 20, 20, 0.95);
+            border-bottom: 1px solid var(--border-color);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            padding: 1rem 0;
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .nav-menu {
+            display: flex;
+            gap: 2rem;
+        }
+
+        .nav-menu a {
+            color: var(--text-main);
+            font-weight: 500;
+        }
+
+        .nav-menu a:hover {
+            color: var(--primary-color);
+        }
+
+        .search-box {
+            display: flex;
+            background: #333;
+            border-radius: 4px;
+            padding: 0.25rem;
+        }
+
+        .search-box input {
+            background: transparent;
+            border: none;
+            color: white;
+            padding: 0.5rem;
+            width: 200px;
+            outline: none;
+        }
+
+        .search-box button {
+            background: transparent;
+            border: none;
+            color: var(--text-secondary);
+            cursor: pointer;
+            padding: 0 0.5rem;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(to right, #141414 0%, rgba(20,20,20,0.8) 50%, rgba(20,20,20,0.2) 100%), 
+                        url('https://picsum.photos/seed/cinema/1600/600') center/cover no-repeat;
+            padding: 4rem 0;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .hero p {
+            color: var(--text-secondary);
+            max-width: 600px;
+            margin: 0 auto 2rem;
+            font-size: 1.1rem;
+        }
+
+        .cta-group {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+        }
+
+        .btn {
+            padding: 0.75rem 1.5rem;
+            border-radius: 4px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s;
+            display: inline-block;
+        }
+
+        .btn-primary {
+            background-color: var(--primary-color);
+            color: white;
+            border: 1px solid var(--primary-color);
+        }
+
+        .btn-primary:hover {
+            background-color: var(--primary-hover);
+        }
+
+        .btn-secondary {
+            background-color: rgba(255,255,255,0.1);
+            color: white;
+            border: 1px solid rgba(255,255,255,0.2);
+        }
+
+        .btn-secondary:hover {
+            background-color: rgba(255,255,255,0.2);
+        }
+
+        /* Feature Grid */
+        .features {
+            padding: 4rem 0;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .feature-card {
+            background-color: var(--card-bg);
+            padding: 2rem;
+            border-radius: 8px;
+            text-align: center;
+            transition: transform 0.3s;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .feature-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .feature-title {
+            font-size: 1.25rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .feature-desc {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+        }
+
+        /* Software List */
+        .software-list {
+            padding: 4rem 0;
+            background-color: #1a1a1a;
+        }
+
+        .software-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .software-card {
+            background-color: var(--card-bg);
+            border-radius: 8px;
+            overflow: hidden;
+            border: 1px solid var(--border-color);
+        }
+
+        .software-thumb {
+            width: 100%;
+            height: 180px;
+            background-color: #000;
+            object-fit: cover;
+        }
+
+        .software-info {
+            padding: 1.5rem;
+        }
+
+        .software-tag {
+            display: inline-block;
+            background-color: #333;
+            color: #aaa;
+            font-size: 0.75rem;
+            padding: 0.25rem 0.5rem;
+            border-radius: 3px;
+            margin-bottom: 0.5rem;
+        }
+
+        .software-title {
+            font-size: 1.25rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .software-desc {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            margin-bottom: 1.5rem;
+            height: 3rem;
+            overflow: hidden;
+        }
+
+        .software-meta {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            border-top: 1px solid #333;
+            padding-top: 1rem;
+        }
+
+        .rating {
+            color: #ffd700;
+        }
+
+        /* Comparison Table */
+        .comparison {
+            padding: 4rem 0;
+        }
+
+        .table-container {
+            overflow-x: auto;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            min-width: 600px;
+        }
+
+        th, td {
+            padding: 1rem;
+            text-align: left;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        th {
+            background-color: #252525;
+            color: var(--text-secondary);
+            font-weight: 600;
+        }
+
+        td {
+            color: var(--text-main);
+        }
+
+        .check { color: #4caf50; }
+        .cross { color: #f44336; }
+
+        /* FAQ */
+        .faq {
+            padding: 4rem 0;
+            background-color: #1a1a1a;
+        }
+
+        .faq-item {
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .faq-question {
+            padding: 1.5rem 0;
+            font-weight: 600;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .faq-question:hover {
+            color: var(--primary-color);
+        }
+
+        .faq-answer {
+            padding-bottom: 1.5rem;
+            color: var(--text-secondary);
+            display: none;
+        }
+
+        .faq-item.active .faq-answer {
+            display: block;
+        }
+
+        /* Footer */
+        footer {
+            padding: 3rem 0;
+            border-top: 1px solid var(--border-color);
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            text-align: center;
+        }
+
+        .footer-links {
+            margin-bottom: 1.5rem;
+        }
+
+        .footer-links a {
+            margin: 0 0.5rem;
+        }
+
+        .footer-links a:hover {
+            color: var(--text-main);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-menu {
+                display: none; /* Simplified for mobile */
+            }
+            .header-content {
+                flex-direction: column;
+                gap: 1rem;
+            }
+            .search-box {
+                width: 100%;
+            }
+            .search-box input {
+                width: 100%;
+            }
+            .hero h1 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container header-content">
+            <a href="#" class="logo">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="2.18" ry="2.18"></rect><line x1="7" y1="2" x2="7" y2="22"></line><line x1="17" y1="2" x2="17" y2="22"></line><line x1="2" y1="12" x2="22" y2="12"></line><line x1="2" y1="7" x2="7" y2="7"></line><line x1="2" y1="17" x2="7" y2="17"></line><line x1="17" y1="17" x2="22" y2="17"></line><line x1="17" y1="7" x2="22" y2="7"></line></svg>
+                影视工具箱
+            </a>
+            <nav class="nav-menu">
+                <a href="#top">首页</a>
+                <a href="#featured">精选软件</a>
+                <a href="#comparison">对比评测</a>
+                <a href="#faq">常见问题</a>
+                <a href="#download">下载中心</a>
+            </nav>
+            <div class="search-box">
+                <input type="text" placeholder="搜索播放器...">
+                <button>🔍</button>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero" id="top">
+            <div class="container">
+                <h1>发现最佳电影软件</h1>
+                <p>无论是本地高清视频播放、网络电影聚合，还是专业的媒体管理工具，我们为您提供全方位的解决方案。</p>
+                <div class="cta-group">
+                    <a href="#featured" class="btn btn-primary">浏览推荐</a>
+                    <a href="#comparison" class="btn btn-secondary">查看评测</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Features -->
+        <section class="features container">
+            <h2 class="section-title">为什么选择专业电影软件</h2>
+            <div class="features-grid">
+                <article class="feature-card">
+                    <div class="feature-icon">🎬</div>
+                    <h3 class="feature-title">极致画质支持</h3>
+                    <p class="feature-desc">支持4K/8K HDR解码，自动色彩校正，还原影院级视觉体验。</p>
+                </article>
+                <article class="feature-card">
+                    <div class="feature-icon">💾</div>
+                    <h3 class="feature-title">本地媒体库管理</h3>
+                    <p class="feature-desc">自动扫描硬盘，智能识别封面与元数据，打造专属个人影院。</p>
+                </article>
+                <article class="feature-card">
+                    <div class="feature-icon">🌐</div>
+                    <h3 class="feature-title">海量在线资源</h3>
+                    <p class="feature-desc">聚合全网正版影视平台，一键切换播放源，无广告干扰。</p>
+                </article>
+            </div>
+        </section>
+
+        <!-- Featured Software -->
+        <section class="software-list" id="featured">
+            <div class="container">
+                <h2 class="section-title">热门推荐</h2>
+                <div class="software-grid">
+                    <!-- Software 1 -->
+                    <article class="software-card">
+                        <img src="https://picsum.photos/seed/player1/400/250" alt="PotPlayer软件界面" class="software-thumb">
+                        <div class="software-info">
+                            <span class="software-tag">播放器</span>
+                            <h3 class="software-title">PotPlayer</h3>
+                            <p class="software-desc">一款功能强大的多媒体播放器，支持几乎所有视频格式，拥有强大的自定义功能和插件系统。</p>
+                            <div class="software-meta">
+                                <span class="rating">★★★★★</span>
+                                <a href="#" class="btn btn-primary" style="padding: 0.25rem 0.75rem; font-size: 0.8rem;">下载</a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Software 2 -->
+                    <article class="software-card">
+                        <img src="https://picsum.photos/seed/player2/400/250" alt="IINA软件界面" class="software-thumb">
+                        <div class="software-info">
+                            <span class="software-tag">播放器</span>
+                            <h3 class="software-title">IINA</h3>
+                            <p class="software-desc">专为 macOS 设计的现代视频播放器，基于 MPV，界面美观，操作流畅，支持触控板手势。</p>
+                            <div class="software-meta">
+                                <span class="rating">★★★★★</span>
+                                <a href="#" class="btn btn-primary" style="padding: 0.25rem 0.75rem; font-size: 0.8rem;">下载</a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Software 3 -->
+                    <article class="software-card">
+                        <img src="https://picsum.photos/seed/player3/400/250" alt="Kodi软件界面" class="software-thumb">
+                        <div class="software-info">
+                            <span class="software-tag">媒体中心</span>
+                            <h3 class="software-title">Kodi</h3>
+                            <p class="software-desc">开源家庭影院中心软件，可扩展性强，支持皮肤定制，是打造家庭影院的核心设备。</p>
+                            <div class="software-meta">
+                                <span class="rating">★★★★☆</span>
+                                <a href="#" class="btn btn-primary" style="padding: 0.25rem 0.75rem; font-size: 0.8rem;">下载</a>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Comparison Table -->
+        <section class="comparison container" id="comparison">
+            <h2 class="section-title">主流播放器功能对比</h2>
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>功能特性</th>
+                            <th>PotPlayer</th>
+                            <th>VLC</th>
+                            <th>IINA</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>操作系统支持</td>
+                            <td>Windows 全平台</td>
+                            <td>全平台 (Win/Mac/Linux)</td>
+                            <td>macOS</td>
+                        </tr>
+                        <tr>
+                            <td>硬件解码支持</td>
+                            <td class="check">✔ 硬件加速优化</td>
+                            <td class="check">✔ 硬件加速</td>
+                            <td class="check">✔ 硬件加速</td>
+                        </tr>
+                        <tr>
+                            <td>字幕功能</td>
+                            <td class="check">✔ 强大字幕支持</td>
+                            <td class="check">✔ 内置字幕库</td>
+                            <td class="check">✔ 外挂字幕</td>
+                        </tr>
+                        <tr>
+                            <td>插件扩展</td>
+                            <td class="check">✔ 丰富插件</td>
+                            <td class="cross">✖ 依赖内部功能</td>
+                            <td class="cross">✖ 较少扩展</td>
+                        </tr>
+                        <tr>
+                            <td>界面美观度</td>
+                            <td class="cross">✖ 默认较简陋</td>
+                            <td class="cross">✖ 极简/复古</td>
+                            <td class="check">✔ 现代设计</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- FAQ -->
+        <section class="faq container" id="faq">
+            <h2 class="section-title">常见问题解答</h2>
+            <div class="faq-list">
+                <div class="faq-item">
+                    <div class="faq-question">如何将本地电影导入播放器？</div>
+                    <div class="faq-answer">大多数播放器支持直接拖拽文件打开，或者通过“文件”菜单中的“打开文件”或“打开文件夹”选项导入。</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">播放器支持哪些视频格式？</div>
+                    <div class="faq-answer">主流播放器（如PotPlayer、VLC）通常支持MP4, MKV, AVI, MOV, FLV, M3U8等几乎所有常见格式。</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">什么是硬解码？</div>
+                    <div class="faq-answer">硬解码是利用显卡或CPU自带的视频处理单元来解码视频，相比软件解码更省电，且能更好地支持高码率4K视频。</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Download CTA -->
+        <section class="container" style="padding: 4rem 0; text-align: center;">
+            <h2 style="font-size: 2rem; margin-bottom: 1rem;">准备好开始观看了吗？</h2>
+            <p style="color: var(--text-secondary); margin-bottom: 2rem;">选择最适合您设备的软件，立即下载。</p>
+            <div class="cta-group">
+                <a href="#" class="btn btn-primary">Windows版下载</a>
+                <a href="#" class="btn btn-secondary">macOS版下载</a>
+                <a href="#" class="btn btn-secondary">安卓版下载</a>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-links">
+                <a href="#">关于我们</a>
+                <a href="#">软件授权</a>
+                <a href="#">隐私政策</a>
+                <a href="#">联系支持</a>
+            </div>
+            <p>&copy; 2023 影视工具箱. 仅供技术交流与软件评测使用。</p>
+            <p style="margin-top: 0.5rem; font-size: 0.8rem; color: #555;">所有软件版权归原作者或发行方所有，本站仅提供下载指引。</p>
+        </div>
+    </footer>
+
+    <script>
+        // FAQ Toggle Logic
+        document.addEventListener('DOMContentLoaded', function() {
+            const faqItems = document.querySelectorAll('.faq-item');
+            
+            faqItems.forEach(item => {
+                const question = item.querySelector('.faq-question');
+                question.addEventListener('click', () => {
+                    // Close other items
+                    faqItems.forEach(otherItem => {
+                        if (otherItem !== item) {
+                            otherItem.classList.remove('active');
+                        }
+                    });
+                    // Toggle current item
+                    item.classList.toggle('active');
+                });
+            });
+        });
+    </script>
+</body>
+</html>
