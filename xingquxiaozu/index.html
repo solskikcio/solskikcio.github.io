@@ -1,0 +1,749 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="专业在线兴趣小组活动记录表生成工具，提供多种模板（如读书会、体育活动、志愿者、社团活动等），支持自定义字段、打印预览和在线保存，帮助您高效记录和管理小组活动。">
+    <meta name="keywords" content="兴趣小组活动记录表,活动记录表模板,在线生成记录表,小组活动管理,社团活动记录">
+    <title>兴趣小组活动记录表 - 在线生成与打印模板工具</title>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #4f46e5;
+            --primary-hover: #4338ca;
+            --secondary-color: #64748b;
+            --bg-color: #f8fafc;
+            --card-bg: #ffffff;
+            --text-main: #1e293b;
+            --text-sub: #475569;
+            --border-color: #e2e8f0;
+            --success-color: #10b981;
+            --shadow-sm: 0 1px 3px rgba(0,0,0,0.1);
+            --shadow-md: 0 4px 6px -1px rgba(0,0,0,0.1);
+            --radius: 8px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+        }
+
+        /* 布局容器 */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* 头部导航 */
+        header {
+            background-color: var(--card-bg);
+            border-bottom: 1px solid var(--border-color);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .nav-wrapper {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 64px;
+        }
+
+        .logo {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 24px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-sub);
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary-color);
+        }
+
+        /* Hero 区域 */
+        .hero {
+            background: linear-gradient(135deg, #e0e7ff 0%, #f3e8ff 100%);
+            padding: 60px 0;
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            color: var(--text-main);
+            margin-bottom: 16px;
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            color: var(--text-sub);
+            max-width: 600px;
+            margin: 0 auto 32px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 24px;
+            border-radius: var(--radius);
+            font-weight: 600;
+            text-decoration: none;
+            cursor: pointer;
+            transition: all 0.2s;
+            border: none;
+            font-size: 1rem;
+        }
+
+        .btn-primary {
+            background-color: var(--primary-color);
+            color: white;
+            box-shadow: 0 4px 6px -1px rgba(79, 70, 229, 0.3);
+        }
+
+        .btn-primary:hover {
+            background-color: var(--primary-hover);
+            transform: translateY(-1px);
+        }
+
+        .btn-outline {
+            background-color: transparent;
+            border: 2px solid var(--primary-color);
+            color: var(--primary-color);
+            margin-left: 10px;
+        }
+
+        .btn-outline:hover {
+            background-color: #eef2ff;
+        }
+
+        /* 功能特性 */
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 24px;
+            margin-bottom: 60px;
+        }
+
+        .feature-card {
+            background: var(--card-bg);
+            padding: 24px;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow-sm);
+            text-align: center;
+            transition: transform 0.2s;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-md);
+        }
+
+        .feature-icon {
+            width: 48px;
+            height: 48px;
+            background-color: #e0e7ff;
+            color: var(--primary-color);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 16px;
+            font-size: 1.5rem;
+        }
+
+        .feature-card h3 {
+            margin-bottom: 8px;
+            color: var(--text-main);
+        }
+
+        .feature-card p {
+            color: var(--text-sub);
+            font-size: 0.95rem;
+        }
+
+        /* 记录表生成器区域 */
+        .generator-section {
+            background-color: var(--card-bg);
+            border-radius: var(--radius);
+            box-shadow: var(--shadow-md);
+            overflow: hidden;
+            margin-bottom: 60px;
+            border: 1px solid var(--border-color);
+        }
+
+        .generator-header {
+            padding: 24px;
+            border-bottom: 1px solid var(--border-color);
+            background-color: #f8fafc;
+        }
+
+        .generator-header h2 {
+            font-size: 1.5rem;
+            color: var(--text-main);
+        }
+
+        .generator-body {
+            padding: 32px;
+        }
+
+        .form-group {
+            margin-bottom: 24px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: var(--text-main);
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 10px 12px;
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius);
+            font-size: 1rem;
+            font-family: inherit;
+            transition: border-color 0.2s;
+        }
+
+        .form-control:focus {
+            outline: none;
+            border-color: var(--primary-color);
+            box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.1);
+        }
+
+        .row {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .col {
+            flex: 1;
+            min-width: 200px;
+        }
+
+        /* 预览区域 */
+        .preview-container {
+            margin-top: 32px;
+            padding-top: 32px;
+            border-top: 2px dashed var(--border-color);
+            display: none; /* 默认隐藏，生成后显示 */
+        }
+
+        .preview-container.active {
+            display: block;
+        }
+
+        .preview-title {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 16px;
+        }
+
+        .record-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.95rem;
+            background: #fff;
+        }
+
+        .record-table th, .record-table td {
+            border: 1px solid var(--border-color);
+            padding: 10px;
+            text-align: left;
+        }
+
+        .record-table th {
+            background-color: #f1f5f9;
+            font-weight: 600;
+            color: var(--text-sub);
+        }
+
+        .record-table tbody tr:nth-child(even) {
+            background-color: #f8fafc;
+        }
+
+        .record-table tbody tr:hover {
+            background-color: #f1f5f9;
+        }
+
+        .action-bar {
+            margin-top: 24px;
+            display: flex;
+            gap: 12px;
+            justify-content: flex-end;
+        }
+
+        /* 常见问题 */
+        .faq-section {
+            margin-bottom: 60px;
+        }
+
+        .faq-section h2 {
+            font-size: 1.5rem;
+            margin-bottom: 24px;
+            color: var(--text-main);
+        }
+
+        .faq-item {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius);
+            margin-bottom: 12px;
+            overflow: hidden;
+        }
+
+        .faq-question {
+            padding: 16px 20px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 600;
+            background-color: #fff;
+            transition: background 0.2s;
+        }
+
+        .faq-question:hover {
+            background-color: #f8fafc;
+        }
+
+        .faq-answer {
+            padding: 0 20px;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out, padding 0.3s ease;
+            color: var(--text-sub);
+            background-color: #fcfcfc;
+        }
+
+        .faq-item.open .faq-answer {
+            padding: 16px 20px;
+            max-height: 200px; /* 近似值 */
+            border-top: 1px solid var(--border-color);
+        }
+
+        .faq-icon {
+            transition: transform 0.3s;
+        }
+
+        .faq-item.open .faq-icon {
+            transform: rotate(180deg);
+        }
+
+        /* 页脚 */
+        footer {
+            background-color: #1e293b;
+            color: #94a3b8;
+            padding: 40px 0;
+            margin-top: auto;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+        }
+
+        .footer-col h4 {
+            color: #fff;
+            margin-bottom: 16px;
+            font-size: 1.1rem;
+        }
+
+        .footer-col ul {
+            list-style: none;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 8px;
+        }
+
+        .footer-col ul li a {
+            color: #94a3b8;
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+
+        .footer-col ul li a:hover {
+            color: #fff;
+        }
+
+        .copyright {
+            text-align: center;
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid #334155;
+            font-size: 0.9rem;
+        }
+
+        /* 打印样式 */
+        @media print {
+            header, .hero, .features, .faq-section, .action-bar, .btn {
+                display: none !important;
+            }
+            body, .container, .generator-section {
+                background-color: white;
+                box-shadow: none;
+                margin: 0;
+                padding: 0;
+                width: 100%;
+                max-width: 100%;
+            }
+            .generator-section {
+                border: none;
+            }
+            .preview-container {
+                display: block !important;
+                margin-top: 0;
+                border-top: none;
+            }
+            .record-table {
+                border: 1px solid #000;
+                page-break-inside: auto;
+            }
+            .record-table th, .record-table td {
+                border: 1px solid #000;
+                color: #000;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+            .nav-links {
+                display: none; /* 简化移动端展示 */
+            }
+            .row {
+                flex-direction: column;
+                gap: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="container nav-wrapper">
+        <a href="#" class="logo">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+            表格工坊
+        </a>
+        <nav class="nav-links">
+            <a href="#generator">在线生成</a>
+            <a href="#features">功能特点</a>
+            <a href="#faq">常见问题</a>
+        </nav>
+    </div>
+</header>
+
+<main>
+    <section class="hero">
+        <div class="container">
+            <h1>兴趣小组活动记录表</h1>
+            <p>高效管理社团、读书会、运动队等各类兴趣小组的活动。自定义字段，一键生成，轻松打印或保存为 PDF。</p>
+            <div>
+                <a href="#generator" class="btn btn-primary">立即生成记录表</a>
+                <a href="#features" class="btn btn-outline">了解功能</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="container">
+        <div class="features" id="features">
+            <article class="feature-card">
+                <div class="feature-icon">📝</div>
+                <h3>自定义字段</h3>
+                <p>根据活动性质（如会议、培训、比赛）自由添加或删除记录项目，满足不同场景需求。</p>
+            </article>
+            <article class="feature-card">
+                <div class="feature-icon">🖨️</div>
+                <h3>一键打印</h3>
+                <p>专为 A4 纸张优化排版，无需手动调整，点击按钮即可直接打印或保存为 PDF 文件。</p>
+            </article>
+            <article class="feature-card">
+                <div class="feature-icon">💾</div>
+                <h3>在线保存</h3>
+                <p>记录表内容实时保存在浏览器缓存中，刷新页面不会丢失，方便随时查看和修改。</p>
+            </article>
+        </div>
+
+        <section class="generator-section" id="generator">
+            <div class="generator-header">
+                <h2>在线制作工具</h2>
+                <p style="color:var(--text-sub); font-size:0.9rem;">填写下方信息，快速生成专业的活动记录表</p>
+            </div>
+            <div class="generator-body">
+                <div class="form-group">
+                    <label for="groupName">小组名称</label>
+                    <input type="text" id="groupName" class="form-control" placeholder="例如：周末读书会、篮球俱乐部">
+                </div>
+                <div class="row">
+                    <div class="col form-group">
+                        <label for="activityDate">活动日期</label>
+                        <input type="date" id="activityDate" class="form-control">
+                    </div>
+                    <div class="col form-group">
+                        <label for="activityType">活动类型</label>
+                        <select id="activityType" class="form-control">
+                            <option value="常规例会">常规例会</option>
+                            <option value="专题培训">专题培训</option>
+                            <option value="志愿服务">志愿服务</option>
+                            <option value="户外拓展">户外拓展</option>
+                            <option value="其他">其他</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="organizer">组织人/主持人</label>
+                    <input type="text" id="organizer" class="form-control" placeholder="填写姓名或职位">
+                </div>
+                <div class="form-group">
+                    <label for="location">活动地点</label>
+                    <input type="text" id="location" class="form-control" placeholder="填写详细地址或会议室名称">
+                </div>
+                <div class="form-group">
+                    <label for="attendees">参与人数</label>
+                    <input type="number" id="attendees" class="form-control" min="0" value="0">
+                </div>
+                <div class="form-group">
+                    <label for="content">活动主要内容</label>
+                    <textarea id="content" class="form-control" rows="4" placeholder="记录本次活动的具体流程、讨论议题或主要成果..."></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="summary">总结与反思</label>
+                    <textarea id="summary" class="form-control" rows="3" placeholder="记录活动中的亮点、不足之处及改进建议..."></textarea>
+                </div>
+
+                <div class="action-bar">
+                    <button id="generateBtn" class="btn btn-primary">生成记录表</button>
+                    <button id="printBtn" class="btn btn-outline" style="display:none;">打印 / 保存 PDF</button>
+                    <button id="resetBtn" class="btn btn-outline" style="color:#ef4444; border-color:#ef4444;">重置</button>
+                </div>
+
+                <div id="previewContainer" class="preview-container">
+                    <div class="preview-title">
+                        <h3>预览效果</h3>
+                        <span style="font-size:0.85rem; color:var(--text-sub);">*点击打印按钮可仅打印此区域</span>
+                    </div>
+                    <table class="record-table" id="previewTable">
+                        <thead>
+                            <tr>
+                                <th style="width: 20%;">项目</th>
+                                <th style="width: 80%;">内容</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>小组名称</td>
+                                <td id="previewGroupName">-</td>
+                            </tr>
+                            <tr>
+                                <td>活动日期</td>
+                                <td id="previewDate">-</td>
+                            </tr>
+                            <tr>
+                                <td>活动类型</td>
+                                <td id="previewType">-</td>
+                            </tr>
+                            <tr>
+                                <td>组织人</td>
+                                <td id="previewOrganizer">-</td>
+                            </tr>
+                            <tr>
+                                <td>活动地点</td>
+                                <td id="previewLocation">-</td>
+                            </tr>
+                            <tr>
+                                <td>参与人数</td>
+                                <td id="previewAttendees">-</td>
+                            </tr>
+                            <tr>
+                                <td>活动主要内容</td>
+                                <td id="previewContent">-</td>
+                            </tr>
+                            <tr>
+                                <td>总结与反思</td>
+                                <td id="previewSummary">-</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <section class="faq-section" id="faq">
+            <h2>常见问题</h2>
+            
+            <div class="faq-item">
+                <div class="faq-question">
+                    <span>如何保存生成的表格到本地？</span>
+                    <span class="faq-icon">▼</span>
+                </div>
+                <div class="faq-answer">
+                    <p>生成表格后，点击“打印 / 保存 PDF”按钮。在打印预览界面，选择“另存为 PDF”即可将表格保存到您的设备中，方便后续存档或打印纸质版。</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">
+                    <span>这些记录表可以直接用于官方存档吗？</span>
+                    <span class="faq-icon">▼</span>
+                </div>
+                <div class="faq-answer">
+                    <p>本工具生成的表格格式规范，内容清晰。您可以直接打印并在纸质版上签字盖章存档。如果需要更正式的公文格式，建议在打印前进行微调。</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">
+                    <span>可以添加照片或附件吗？</span>
+                    <span class="faq-icon">▼</span>
+                </div>
+                <div class="faq-answer">
+                    <p>当前版本为在线文本记录表生成工具，专注于文字信息的结构化排版。如需添加照片，建议在打印后手动粘贴，或使用专门的文档处理软件进行编辑。</p>
+                </div>
+            </div>
+        </section>
+    </section>
+</main>
+
+<footer>
+    <div class="container">
+        <div class="footer-content">
+            <div class="footer-col">
+                <h4>关于我们</h4>
+                <p style="font-size:0.9rem; line-height:1.6;">表格工坊致力于为各类组织和团队提供简单、高效的在线表格生成解决方案，帮助提升管理效率。</p>
+            </div>
+            <div class="footer-col">
+                <h4>快速链接</h4>
+                <ul>
+                    <li><a href="#">活动计划表</a></li>
+                    <li><a href="#">会议纪要模板</a></li>
+                    <li><a href="#">考勤记录表</a></li>
+                    <li><a href="#">财务收支表</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>联系支持</h4>
+                <ul>
+                    <li><a href="#">使用帮助</a></li>
+                    <li><a href="#">意见反馈</a></li>
+                    <li><a href="#">隐私政策</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="copyright">
+            &copy; 2023 表格工坊. All rights reserved. 本工具仅供个人及组织内部使用.
+        </div>
+    </div>
+</footer>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // 设置默认日期为今天
+        const dateInput = document.getElementById('activityDate');
+        if(dateInput) {
+            dateInput.valueAsDate = new Date();
+        }
+
+        // 生成按钮逻辑
+        const generateBtn = document.getElementById('generateBtn');
+        const printBtn = document.getElementById('printBtn');
+        const resetBtn = document.getElementById('resetBtn');
+        const previewContainer = document.getElementById('previewContainer');
+        const previewTable = document.getElementById('previewTable');
+
+        // 填充数据函数
+        function fillPreview() {
+            const group = document.getElementById('groupName').value || '-';
+            const date = document.getElementById('activityDate').value || '-';
+            const type = document.getElementById('activityType').value || '-';
+            const organizer = document.getElementById('organizer').value || '-';
+            const location = document.getElementById('location').value || '-';
+            const attendees = document.getElementById('attendees').value || '0';
+            const content = document.getElementById('content').value || '无记录';
+            const summary = document.getElementById('summary').value || '无记录';
+
+            document.getElementById('previewGroupName').textContent = group;
+            document.getElementById('previewDate').textContent = date;
+            document.getElementById('previewType').textContent = type;
+            document.getElementById('previewOrganizer').textContent = organizer;
+            document.getElementById('previewLocation').textContent = location;
+            document.getElementById('previewAttendees').textContent = attendees;
+            document.getElementById('previewContent').textContent = content;
+            document.getElementById('previewSummary').textContent = summary;
+        }
+
+        // 生成表格
+        generateBtn.addEventListener('click', function() {
+            fillPreview();
+            previewContainer.classList.add('active');
+            printBtn.style.display = 'inline-block';
+            // 平滑滚动到预览区
+            previewContainer.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        });
+
+        // 打印功能
+        printBtn.addEventListener('click', function() {
+            window.print();
+        });
+
+        // 重置功能
+        resetBtn.addEventListener('click', function() {
+            if(confirm('确定要清空所有内容吗？')) {
+                document.querySelectorAll('input, textarea, select').forEach(el => el.value = '');
+                dateInput.valueAsDate = new Date(); // 恢复日期
+                previewContainer.classList.remove('active');
+                printBtn.style.display = 'none';
+            }
+        });
+
+        // FAQ 折叠逻辑
+        const faqItems = document.querySelectorAll('.faq-item');
+        faqItems.forEach(item => {
+            const question = item.querySelector('.faq-question');
+            question.addEventListener('click', () => {
+                const isOpen = item.classList.contains('open');
+                // 关闭所有
+                faqItems.forEach(i => i.classList.remove('open'));
+                // 如果刚才没打开，则打开当前
+                if (!isOpen) {
+                    item.classList.add('open');
+                }
+            });
+        });
+    });
+</script>
+
+</body>
+</html>
