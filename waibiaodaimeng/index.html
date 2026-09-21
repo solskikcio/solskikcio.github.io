@@ -1,0 +1,599 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="外表呆萌内心凶猛的动物专题：揭秘自然界中那些外表可爱、攻击力爆表的生物，包括蜜袋鼯、蜜獾、豪猪等反差萌动物的习性、饲养与生存智慧。">
+    <meta name="keywords" content="外表呆萌内心凶猛的动物, 反差萌动物, 蜜袋鼯, 蜜獾, 豪猪, 野生动物习性">
+    <title>外表呆萌内心凶猛的动物-反差萌生物习性揭秘与饲养指南</title>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #ff6b6b;
+            --secondary-color: #4ecdc4;
+            --accent-color: #ffe66d;
+            --text-main: #2d3436;
+            --text-light: #636e72;
+            --bg-body: #f7f9fc;
+            --bg-card: #ffffff;
+            --spacing-unit: 1rem;
+            --container-width: 1200px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans SC", sans-serif;
+            line-height: 1.6;
+            color: var(--text-main);
+            background-color: var(--bg-body);
+            -webkit-font-smoothing: antialiased;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.3s ease;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* Utility */
+        .container {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 0 var(--spacing-unit);
+        }
+
+        .section-title {
+            font-size: 2rem;
+            margin-bottom: 2rem;
+            text-align: center;
+            position: relative;
+            padding-bottom: 1rem;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 4px;
+            background: var(--primary-color);
+            border-radius: 2px;
+        }
+
+        /* Header */
+        header {
+            background: var(--bg-card);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .nav-wrapper {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 70px;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            font-weight: 500;
+            color: var(--text-main);
+        }
+
+        .nav-links a:hover {
+            color: var(--primary-color);
+        }
+
+        /* Hero Section */
+        .hero {
+            position: relative;
+            height: 500px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            background: linear-gradient(135deg, #ff9a9e 0%, #fecfef 99%, #fecfef 100%);
+            overflow: hidden;
+            margin-bottom: 3rem;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: url('data:image/svg+xml;utf8,<svg width="100" height="100" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><circle cx="10" cy="10" r="2" fill="rgba(255,255,255,0.2)"/><circle cx="50" cy="50" r="2" fill="rgba(255,255,255,0.2)"/><circle cx="90" cy="80" r="2" fill="rgba(255,255,255,0.2)"/></svg>');
+            opacity: 0.5;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 800px;
+            padding: 0 1rem;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .hero p {
+            font-size: 1.25rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 0.8rem 2rem;
+            background: var(--primary-color);
+            color: white;
+            border-radius: 50px;
+            font-weight: 600;
+            box-shadow: 0 4px 15px rgba(255, 107, 107, 0.4);
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(255, 107, 107, 0.5);
+        }
+
+        /* Intro Section */
+        .intro {
+            background: var(--bg-card);
+            padding: 4rem 0;
+            margin-bottom: 3rem;
+            border-radius: 0 0 20px 20px;
+        }
+
+        .intro-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .intro-text h2 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            color: var(--text-main);
+        }
+
+        .intro-text p {
+            margin-bottom: 1rem;
+            color: var(--text-light);
+        }
+
+        .intro-visual {
+            position: relative;
+            height: 300px;
+            background: #f0f0f0;
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 5rem;
+        }
+
+        /* Animal Grid */
+        .animals-section {
+            padding: 2rem 0 4rem;
+        }
+
+        .animal-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .animal-card {
+            background: var(--bg-card);
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .animal-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+
+        .card-image {
+            height: 200px;
+            background: #e0e0e0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 4rem;
+            position: relative;
+        }
+
+        .card-image::after {
+            content: '❤️';
+            position: absolute;
+            bottom: 10px;
+            right: 10px;
+            background: white;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .card-content {
+            padding: 1.5rem;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .card-tag {
+            font-size: 0.8rem;
+            color: var(--primary-color);
+            text-transform: uppercase;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .card-title {
+            font-size: 1.25rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .card-desc {
+            font-size: 0.9rem;
+            color: var(--text-light);
+            margin-bottom: 1rem;
+            flex-grow: 1;
+        }
+
+        .danger-level {
+            margin-top: auto;
+            padding-top: 1rem;
+            border-top: 1px solid #eee;
+        }
+
+        .level-bar {
+            height: 8px;
+            background: #eee;
+            border-radius: 4px;
+            overflow: hidden;
+            margin-top: 0.5rem;
+        }
+
+        .level-fill {
+            height: 100%;
+            background: var(--secondary-color);
+            width: 0%;
+            transition: width 1s ease-in-out;
+        }
+
+        /* FAQ Section */
+        .faq-section {
+            background: white;
+            padding: 4rem 0;
+            margin-bottom: 4rem;
+        }
+
+        .faq-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        details {
+            margin-bottom: 1rem;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 1rem;
+        }
+
+        summary {
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            padding: 0.5rem 0;
+            list-style: none;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        summary::-webkit-details-marker {
+            display: none;
+        }
+
+        summary::after {
+            content: '+';
+            font-size: 1.5rem;
+            color: var(--primary-color);
+            transition: transform 0.2s;
+        }
+
+        details[open] summary::after {
+            transform: rotate(45deg);
+        }
+
+        .faq-answer {
+            padding: 1rem 0 0.5rem;
+            color: var(--text-light);
+            font-size: 0.95rem;
+        }
+
+        /* Footer */
+        footer {
+            background: #2d3436;
+            color: white;
+            padding: 3rem 0;
+            text-align: center;
+        }
+
+        .footer-links {
+            margin-bottom: 1.5rem;
+        }
+
+        .footer-links a {
+            margin: 0 0.5rem;
+            color: #b2bec3;
+        }
+
+        .footer-links a:hover {
+            color: white;
+        }
+
+        .copyright {
+            color: #636e72;
+            font-size: 0.9rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+            .intro-grid {
+                grid-template-columns: 1fr;
+            }
+            .nav-links {
+                display: none; /* Simplified for mobile */
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container nav-wrapper">
+            <a href="#" class="logo">🐾 反差萌生物馆</a>
+            <nav class="nav-links">
+                <a href="#intro">物种档案</a>
+                <a href="#gallery">全图鉴</a>
+                <a href="#faq">饲养指南</a>
+                <a href="#contact">联系我们</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="hero-content">
+                <h1>外表呆萌内心凶猛的动物</h1>
+                <p>打破刻板印象，探索自然界中那些拥有“可爱伪装”的顶级猎手与生存大师。</p>
+                <a href="#gallery" class="btn">开始探索</a>
+            </div>
+        </section>
+
+        <!-- Intro Section -->
+        <section id="intro" class="intro">
+            <div class="container intro-grid">
+                <div class="intro-text">
+                    <h2>谁说可爱就一定温顺？</h2>
+                    <p>在自然界中，“外表呆萌”往往是一种生存策略。许多看似无害的小动物，实际上拥有惊人的防御机制、超强的攻击力或令人咋舌的生存智慧。从夜行性的小型哺乳动物到拥有毒液的爬行动物，它们用实力证明：萌即是正义，但惹怒它们要付出代价。</p>
+                    <p>本专题将带您深入了解这些“反差萌”生物的真实面貌，包括它们的攻击性评估、生存习性以及作为宠物饲养的特殊注意事项。</p>
+                </div>
+                <div class="intro-visual">
+                    🦊
+                </div>
+            </div>
+        </section>
+
+        <!-- Animal Gallery -->
+        <section id="gallery" class="animals-section">
+            <div class="container">
+                <h2 class="section-title">反差萌物种图鉴</h2>
+                <div class="animal-grid">
+                    
+                    <!-- Card 1 -->
+                    <article class="animal-card">
+                        <div class="card-image">🦝</div>
+                        <div class="card-content">
+                            <span class="card-tag">哺乳纲</span>
+                            <h3 class="card-title">蜜獾 (平头哥)</h3>
+                            <p class="card-desc">无所畏惧的“平头哥”，体型虽小但皮糙肉厚，智商极高，敢于挑战比自身体型大数倍的对手。</p>
+                            <div class="danger-level">
+                                <div style="display:flex; justify-content:space-between; font-size:0.8rem; margin-bottom:4px;">
+                                    <span>凶猛程度</span>
+                                    <span>致命</span>
+                                </div>
+                                <div class="level-bar"><div class="level-fill" style="width: 98%; background: #ff6b6b;"></div></div>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Card 2 -->
+                    <article class="animal-card">
+                        <div class="card-image">🦇</div>
+                        <div class="card-content">
+                            <span class="card-tag">哺乳纲</span>
+                            <h3 class="card-title">蜜袋鼯</h3>
+                            <p class="card-desc">夜行性有袋动物，能滑翔。虽体型娇小可爱，但具有极强的领地意识，被激怒时咬合力惊人且会回咬。</p>
+                            <div class="danger-level">
+                                <div style="display:flex; justify-content:space-between; font-size:0.8rem; margin-bottom:4px;">
+                                    <span>凶猛程度</span>
+                                    <span>中等</span>
+                                </div>
+                                <div class="level-bar"><div class="level-fill" style="width: 65%; background: #ffe66d;"></div></div>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Card 3 -->
+                    <article class="animal-card">
+                        <div class="card-image">🦔</div>
+                        <div class="card-content">
+                            <span class="card-tag">哺乳纲</span>
+                            <h3 class="card-title">豪猪</h3>
+                            <p class="card-desc">背着“长矛”的草食动物。看似笨拙，一旦受到威胁会竖起棘刺并主动冲撞，其棘刺可刺穿动物皮肉。</p>
+                            <div class="danger-level">
+                                <div style="display:flex; justify-content:space-between; font-size:0.8rem; margin-bottom:4px;">
+                                    <span>凶猛程度</span>
+                                    <span>危险</span>
+                                </div>
+                                <div class="level-bar"><div class="level-fill" style="width: 85%; background: #ff9f43;"></div></div>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Card 4 -->
+                    <article class="animal-card">
+                        <div class="card-image">🐢</div>
+                        <div class="card-content">
+                            <span class="card-tag">爬行纲</span>
+                            <h3 class="card-title">箱龟/鳄龟</h3>
+                            <p class="card-desc">拥有极具欺骗性的长相，但咬合力在爬行动物中名列前茅，攻击速度快且猛烈，一口能咬碎骨头。</p>
+                            <div class="danger-level">
+                                <div style="display:flex; justify-content:space-between; font-size:0.8rem; margin-bottom:4px;">
+                                    <span>凶猛程度</span>
+                                    <span>致命</span>
+                                </div>
+                                <div class="level-bar"><div class="level-fill" style="width: 95%; background: #ff6b6b;"></div></div>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Card 5 -->
+                    <article class="animal-card">
+                        <div class="card-image">🦈</div>
+                        <div class="card-content">
+                            <span class="card-tag">软骨鱼纲</span>
+                            <h3 class="card-title">小丑鱼</h3>
+                            <p class="card-desc">虽然名字叫“小丑”，且与海葵共生，但部分品种具有极强的攻击性，会咬伤饲养缸内其他鱼类。</p>
+                            <div class="danger-level">
+                                <div style="display:flex; justify-content:space-between; font-size:0.8rem; margin-bottom:4px;">
+                                    <span>凶猛程度</span>
+                                    <span>一般</span>
+                                </div>
+                                <div class="level-bar"><div class="level-fill" style="width: 40%; background: #54a0ff;"></div></div>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Card 6 -->
+                    <article class="animal-card">
+                        <div class="card-image">🦗</div>
+                        <div class="card-content">
+                            <span class="card-tag">昆虫</span>
+                            <h3 class="card-title">螳螂</h3>
+                            <p class="card-desc">捕食性昆虫，外表优雅修长，却是凶残的猎手。母螳螂在交配后甚至有食夫的习性。</p>
+                            <div class="danger-level">
+                                <div style="display:flex; justify-content:space-between; font-size:0.8rem; margin-bottom:4px;">
+                                    <span>凶猛程度</span>
+                                    <span>危险</span>
+                                </div>
+                                <div class="level-bar"><div class="level-fill" style="width: 75%; background: #ff9f43;"></div></div>
+                            </div>
+                        </div>
+                    </article>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section id="faq" class="faq-section">
+            <div class="container faq-container">
+                <h2 class="section-title">常见问题与饲养指南</h2>
+                
+                <details>
+                    <summary>外表呆萌的动物可以作为宠物饲养吗？</summary>
+                    <div class="faq-answer">
+                        <p>这取决于具体的物种。像蜜袋鼯、蜜獾（需合法资质）、蜜熊等动物，虽然外表可爱，但往往具有攻击性、领地意识强或需要特殊的生活环境。在决定饲养前，务必了解其法律地位和饲养难度，避免因冲动购买导致动物受苦或被遗弃。</p>
+                    </div>
+                </details>
+
+                <details>
+                    <summary>蜜獾为什么被称为“平头哥”？</summary>
+                    <div class="faq-answer">
+                        <p>蜜獾因其独特的头部结构（头骨扁平，脑容量虽小但神经反应极快）以及无所畏惧、敢于挑战任何对手的性格，被中国网友戏称为“平头哥”。其名言“生死看淡，不服就干”广为流传。</p>
+                    </div>
+                </details>
+
+                <details>
+                    <summary>被豪猪的刺扎了怎么办？</summary>
+                    <div class="faq-answer">
+                        <p>首先不要惊慌移动，以免刺入更深。应尽快前往医院，医生通常会使用医用胶带反复粘贴拔出刺。切勿自行硬拔，以免刺断在体内引起严重感染。</p>
+                    </div>
+                </details>
+
+                <details>
+                    <summary>如何判断一只外表可爱的动物是否有攻击性？</summary>
+                    <div class="faq-answer">
+                        <p>观察其肢体语言。耳朵向后压低、发出低吼、露出牙齿、身体紧绷或试图躲藏后再冲出攻击，都是警告信号。尤其是夜行性动物，在光线不足时可能更具攻击性。</p>
+                    </div>
+                </details>
+
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-links">
+                <a href="#">关于我们</a>
+                <a href="#">物种百科</a>
+                <a href="#">免责声明</a>
+                <a href="#">隐私政策</a>
+            </div>
+            <p class="copyright">&copy; 2023 反差萌生物馆. 仅供科普参考，请勿模仿危险行为。</p>
+        </div>
+    </footer>
+
+</body>
+</html>
